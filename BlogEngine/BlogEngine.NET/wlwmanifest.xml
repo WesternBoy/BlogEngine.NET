@@ -30,7 +30,7 @@
       <text>Tags</text>
       <imageUrl>Content/images/blog/benTag24.png</imageUrl>
       <contentUrl><![CDATA[ 
-         {blog-homepage-url}AppCode/Wlw/TagMiniView.cshtml
+         {blog-homepage-url}AppCode/Wlw/TagMini.cshtml
       ]]></contentUrl>
       <contentDisplaySize>250,250</contentDisplaySize>
     </button>     

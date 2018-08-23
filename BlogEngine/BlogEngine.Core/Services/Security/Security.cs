@@ -47,8 +47,8 @@ namespace BlogEngine.Core
         {
             // default to an empty/unauthenticated user to assign to context.User.
             CustomIdentity identity = new CustomIdentity(string.Empty, false);
-            CustomPrincipal principal = new CustomPrincipal(identity); 
-            
+            CustomPrincipal principal = new CustomPrincipal(identity);
+
             var context = ((HttpApplication)sender).Context;
 
             // FormsAuthCookieName is a custom cookie name based on the current instance.
@@ -72,8 +72,8 @@ namespace BlogEngine.Core
 
                 if (authTicket != null)
                 {
-                    identity = new CustomIdentity(authTicket.Name, true); 
-                    
+                    identity = new CustomIdentity(authTicket.Name, true);
+
                     if (!string.IsNullOrWhiteSpace(authTicket.UserData))
                     {
                         int delimiter = authTicket.UserData.IndexOf(AUTH_TKT_USERDATA_DELIMITER);
@@ -190,11 +190,11 @@ namespace BlogEngine.Core
 
                     if (!string.IsNullOrWhiteSpace(returnUrl))
                     {
-                        context.Response.Redirect(returnUrl);
+                        context.Response.Redirect(Blog.CurrentInstance.AbsoluteWebRoot + returnUrl);
                     }
                     else
                     {
-                        context.Response.Redirect(Utils.RelativeWebRoot);
+                        context.Response.Redirect(Blog.CurrentInstance.AbsoluteWebRoot.ToString());
                     }
 
                     return true;
